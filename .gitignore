@@ -2,3 +2,8 @@ node_modules/
 .wrangler/
 head.webp
 icons/
+# unpacked from tools/bin at build
+engine.js
+avatar.js
+avatar3d.js
+app.js
