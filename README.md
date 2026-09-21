@@ -1,7 +1,12 @@
 # Fit
 
-Personal wardrobe app. Static site on Cloudflare Workers (static assets); rendering runs in a Supabase Edge Function.
+Personal wardrobe app. Static site on Cloudflare Workers (static assets), Supabase for auth/data/storage, Supabase Edge Function `render` for garment images.
 
-Deploys: every push to `main` is built by Cloudflare Workers Builds — build command `npm run build` (unpacks the binary assets from `tools/bin`), deploy command `npx wrangler deploy`.
+## Deploy
 
-Layout: site at the root (`index.html`, `app.js`, …); `netlify/functions/render-background.mjs` is the render source of truth, ported to `supabase/functions/render/index.ts` by `tools-port.py`; `engine-lab/` is the engine test harness.
+Every push to `main` is built and deployed by Cloudflare Workers Builds:
+
+- build: `npm run build` (unpacks `tools/bin/*.b64` into the site root)
+- deploy: `npx wrangler deploy`
+
+Binary and large files are carried in `tools/bin/` as base64 (optionally gzipped, optionally split into `.partN` files) because they are pushed through a text-only connector.
