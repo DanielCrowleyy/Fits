@@ -1,0 +1,8 @@
+{
+  "name": "fit",
+  "private": true,
+  "scripts": {
+    "build": "node tools/unpack.js",
+    "deploy": "npx wrangler deploy"
+  }
+}

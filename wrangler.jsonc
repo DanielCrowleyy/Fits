@@ -1,0 +1,11 @@
+// Fit — static site on Cloudflare Workers (static assets). No Worker script: the site is
+// plain HTML/JS; rendering runs in the Supabase Edge Function, not here.
+// Deployed by Cloudflare Workers Builds on every push to main (build: npm run build).
+{
+  "name": "fit",
+  "compatibility_date": "2026-09-18",
+  "assets": {
+    "directory": "./",
+    "not_found_handling": "single-page-application"
+  }
+}
