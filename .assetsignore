@@ -8,6 +8,7 @@ tools/
 supabase/
 engine-lab/
 .github/
+worker/
 package.json
 package-lock.json
 .gitignore
